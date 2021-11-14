@@ -43,7 +43,15 @@
   <ItemGroup>
     <Compile Include="CD_Conexion.cs" />
     <Compile Include="CD_Registro.cs" />
+    <Compile Include="ConnectionToSql.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserDao.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaSoporte\CapaSoporte.csproj">
+      <Project>{23565181-b2de-4bc7-acd1-85c3d23a07bb}</Project>
+      <Name>CapaSoporte</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

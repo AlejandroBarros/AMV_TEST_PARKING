@@ -89,15 +89,17 @@ namespace CapaNegocio
         {
             DataTable tabla = new DataTable();
             tabla = objetoCDRegistro.RegistroCompleto();
+            tabla.PrimaryKey = new DataColumn[] { tabla.Columns["idregistro"] };
 
 
-            String condicion = "idRegistro=" + ID_Registro; //CORREGIR ESTO. INDEX?
-            DataRow[] PrecioVar = tabla.Select(condicion);
-            Precio = Convert.ToDouble( PrecioVar[0]["Precio"]);
+            DataRow FilaSelecionada = tabla.Rows.Find(ID_Registro);
+
+            Precio = Convert.ToDouble(FilaSelecionada["Precio"]);
+            FechaEntrada = Convert.ToDateTime(FilaSelecionada["entrada"]);
 
 
             //Precio = Convert.ToDouble(tabla.Rows[ID_Registro]["Precio"]);
-            FechaEntrada = Convert.ToDateTime(tabla.Rows[ID_Registro]["entrada"]);
+            //FechaEntrada = Convert.ToDateTime(tabla.Rows[ID_Registro]["entrada"]);
 
 
             TimeSpan TiempoCalculado = FechaSalida - FechaEntrada;
@@ -111,7 +113,37 @@ namespace CapaNegocio
 
             objetoCDRegistro.InsertarRegistroSalida();
         }
-        
+
+
+        public void EditarRegistro()
+        {
+            DataTable tabla = new DataTable();
+            tabla = objetoCDRegistro.RegistroCompleto();
+            tabla.PrimaryKey = new DataColumn[] { tabla.Columns["idregistro"] };
+
+
+            DataRow FilaSelecionada = tabla.Rows.Find(ID_Registro);
+
+            Precio = Convert.ToDouble(FilaSelecionada["Precio"]);
+            FechaEntrada = Convert.ToDateTime(FilaSelecionada["entrada"]);
+
+
+            //Precio = Convert.ToDouble(tabla.Rows[ID_Registro]["Precio"]);
+            //FechaEntrada = Convert.ToDateTime(tabla.Rows[ID_Registro]["entrada"]);
+
+
+            TimeSpan TiempoCalculado = FechaSalida - FechaEntrada;
+            Duracion = Convert.ToInt32(TiempoCalculado.TotalMinutes);
+            Coste = Duracion * Precio;
+
+            objetoCDRegistro._ID_Registro = ID_Registro;
+            objetoCDRegistro._Matricula = Matricula;
+            objetoCDRegistro._FechaSalida = FechaSalida;
+            objetoCDRegistro._Duracion = Duracion;
+            objetoCDRegistro._Coste = Coste;
+
+            objetoCDRegistro.InsertarRegistroSalida();
+        }
 
         public void EliminarRegistro()
         {

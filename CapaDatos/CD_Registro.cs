@@ -113,6 +113,27 @@ namespace CapaDatos
             comando.Parameters.Clear();
         }
 
+        public void EditarRegistro()
+        {
+            //TRANSACT SQL
+            comando.Connection = conexion.AbrirConexion();
+            comando.CommandText = "EditarMatricula";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@Id_vehiculo", ID_Vehiculo);
+            comando.Parameters.AddWithValue("@matricula", Matricula);
+            comando.Parameters.AddWithValue("@ID_Tipo", ID_Tipo);
+            comando.ExecuteNonQuery();
+
+            comando.CommandText = "EditarRegistro";
+            comando.CommandType = CommandType.StoredProcedure;
+            comando.Parameters.AddWithValue("@id_registro", ID_Registro);
+            comando.Parameters.AddWithValue("@fechaEntrada", FechaEntrada);
+            comando.Parameters.AddWithValue("@fechaSalida", FechaSalida);
+            comando.ExecuteNonQuery();
+            comando.Parameters.Clear();
+        }
+
+
         public void EliminarRegistro()
         {
             comando.Connection = conexion.AbrirConexion();
