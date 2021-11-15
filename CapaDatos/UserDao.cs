@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using CapaSoporte.Cache;
 
 
 namespace CapaDatos
@@ -26,6 +27,16 @@ namespace CapaDatos
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
+                        while (reader.Read())
+                        {
+                            CacheUsuario.IdUsuario = reader.GetInt32(0);
+                            CacheUsuario.Usuario = reader.GetString(1);
+                            CacheUsuario.Contraseña = reader.GetString(2);
+                            CacheUsuario.Nombre = reader.GetString(3);
+                            CacheUsuario.Apellido = reader.GetString(4);
+                            CacheUsuario.Posicion = reader.GetString(5);
+                            CacheUsuario.Email = reader.GetString(6);
+                        }
                         return true;
                     }
                     else

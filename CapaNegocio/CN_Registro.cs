@@ -28,6 +28,16 @@ namespace CapaNegocio
         private string Tipo;
         private double Precio;
 
+        private double GananciasTotales;
+        private DateTime DiaGT;
+        private int DuracionTotal;
+        private DateTime DiaDT;
+        private int RegistrosTotales;
+        private DateTime DiaRT;
+        private DateTime diaSeleccionado;
+
+
+
         //METODO GET SET
         public int _ID_Registro { get => ID_Registro; set => ID_Registro = value; }
         public DateTime _FechaEntrada { get => FechaEntrada; set => FechaEntrada = value; }
@@ -45,6 +55,15 @@ namespace CapaNegocio
         public int _ID_Tipo { get => ID_Tipo; set => ID_Tipo = value; }
         public string _Tipo { get => Tipo; set => Tipo = value; }
         public double _Precio { get => Precio; set => Precio = value; }
+
+
+        public double _GananciasTotales { get => GananciasTotales; set => GananciasTotales = value; }
+        public DateTime _DiaGT { get => DiaGT; set => DiaGT = value; }
+        public int _DuracionTotal { get => DuracionTotal; set => DuracionTotal = value; }
+        public DateTime _DiaDT { get => DiaDT; set => DiaDT = value; }
+        public int _RegistrosTotales { get => RegistrosTotales; set => RegistrosTotales = value; }
+        public DateTime _DiaRT { get => DiaRT; set => DiaRT = value; }
+        public DateTime _diaSeleccionado { get => diaSeleccionado; set => diaSeleccionado = value; }
 
 
         //METODOS/FUNCIONES 
@@ -110,8 +129,44 @@ namespace CapaNegocio
             objetoCDRegistro._FechaSalida = FechaSalida;
             objetoCDRegistro._Duracion = Duracion;
             objetoCDRegistro._Coste= Coste;
+            if(Duracion >= 0) { objetoCDRegistro.InsertarRegistroSalida(); }
+            
+            
+        }
 
-            objetoCDRegistro.InsertarRegistroSalida();
+        public void FuncionesEspeciales()
+        {
+
+            DataTable Tabla = new DataTable();
+            Tabla = objetoCDRegistro.DiasRegistrados();
+            //DataColumn tablaDias = new DataColumn[] { Tabla.Columns["idregistro"]
+
+            for (int i = 0; i < Tabla.Rows.Count; i++)
+            {
+                if (Convert.ToString(Tabla.Rows[i]["diaSalidas"]) != "")
+                {
+                    objetoCDRegistro._diaSeleccionado = Convert.ToDateTime(Tabla.Rows[i]["diaSalidas"]);
+
+                    DataTable TablaDatos = new DataTable();
+                    TablaDatos = objetoCDRegistro.RegistroxDia();
+                    if (GananciasTotales < Convert.ToDouble(TablaDatos.Rows[0]["GananciasTotales"]))
+                    {
+                        GananciasTotales = Convert.ToDouble(TablaDatos.Rows[0]["GananciasTotales"]);
+                        DiaGT = objetoCDRegistro._diaSeleccionado.Date;
+                    }
+                    if (DuracionTotal < Convert.ToInt32(TablaDatos.Rows[0]["DuracionTotal"]))
+                    {
+                        DuracionTotal = Convert.ToInt32(TablaDatos.Rows[0]["DuracionTotal"]);
+                        DiaDT = objetoCDRegistro._diaSeleccionado.Date;
+                    }
+                    if (RegistrosTotales < Convert.ToInt32(TablaDatos.Rows[0]["RegistrosTotales"]))
+                    {
+                        RegistrosTotales = Convert.ToInt32(TablaDatos.Rows[0]["RegistrosTotales"]);
+                        DiaRT = objetoCDRegistro._diaSeleccionado.Date;
+                    }
+                }
+                
+            }
         }
 
 
