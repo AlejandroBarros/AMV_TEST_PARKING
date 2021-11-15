@@ -3,7 +3,7 @@
 
 USE [master]
 GO
-/****** Object:  Database [GestionAparcamientos]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  Database [GestionAparcamientos]    Script Date: 15/11/2021 8:03:35 ******/
 CREATE DATABASE [GestionAparcamientos]
  CONTAINMENT = NONE
  ON  PRIMARY 
@@ -85,7 +85,7 @@ ALTER DATABASE [GestionAparcamientos] SET QUERY_STORE = OFF
 GO
 USE [GestionAparcamientos]
 GO
-/****** Object:  Table [dbo].[Registro]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  Table [dbo].[Registro]    Script Date: 15/11/2021 8:03:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -103,7 +103,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[Tipo]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  Table [dbo].[Tipo]    Script Date: 15/11/2021 8:03:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -118,7 +118,7 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
-/****** Object:  Table [dbo].[vehiculo]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  Table [dbo].[vehiculo]    Script Date: 15/11/2021 8:03:35 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -133,6 +133,82 @@ PRIMARY KEY CLUSTERED
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
 ) ON [PRIMARY]
 GO
+SET IDENTITY_INSERT [dbo].[Registro] ON 
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (2, 21, CAST(N'2021-11-13T18:49:21.000' AS DateTime), CAST(N'2021-11-13T19:20:52.000' AS DateTime), 32, 96.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (3, 22, CAST(N'2021-11-13T18:49:21.000' AS DateTime), CAST(N'2021-11-13T19:22:05.000' AS DateTime), 33, 33.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (7, 25, CAST(N'2021-11-13T19:22:05.000' AS DateTime), CAST(N'2021-11-13T19:44:05.000' AS DateTime), 22, 22.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (8, 26, CAST(N'2021-11-13T19:22:05.000' AS DateTime), CAST(N'2021-11-13T19:44:05.000' AS DateTime), 22, 66.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (10, 27, CAST(N'2021-11-14T00:16:16.000' AS DateTime), CAST(N'2021-11-14T11:40:55.000' AS DateTime), 685, 2055.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (11, 28, CAST(N'2021-11-15T01:12:12.000' AS DateTime), CAST(N'2021-11-15T03:12:12.000' AS DateTime), 120, 360.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (12, 29, CAST(N'2021-11-15T02:19:29.000' AS DateTime), CAST(N'2021-11-15T03:53:00.000' AS DateTime), 94, 564.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (13, 30, CAST(N'2021-11-15T06:08:45.000' AS DateTime), CAST(N'2021-11-15T06:35:19.000' AS DateTime), 27, 162.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (14, 31, CAST(N'2021-11-15T06:35:19.000' AS DateTime), CAST(N'2021-11-15T06:35:19.000' AS DateTime), 0, 0.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (15, 31, CAST(N'2021-11-15T06:35:19.000' AS DateTime), CAST(N'2021-11-15T06:57:37.000' AS DateTime), 22, 55.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (16, 31, CAST(N'2021-11-15T06:35:19.000' AS DateTime), CAST(N'2021-11-15T06:41:37.000' AS DateTime), 6, 15.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (17, 31, CAST(N'2021-11-15T06:35:19.000' AS DateTime), CAST(N'2021-11-15T06:57:37.000' AS DateTime), 22, 55.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (18, 32, CAST(N'2021-10-14T06:39:17.000' AS DateTime), NULL, NULL, NULL)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (19, 32, CAST(N'2021-06-16T01:39:17.000' AS DateTime), CAST(N'2021-11-15T06:39:17.000' AS DateTime), 219180, 219180.0000)
+GO
+INSERT [dbo].[Registro] ([idRegistro], [idVehiculo], [entrada], [salida], [duracion], [coste]) VALUES (20, 33, CAST(N'2021-11-15T07:39:27.440' AS DateTime), CAST(N'2021-11-15T07:39:27.417' AS DateTime), 0, 0.0000)
+GO
+SET IDENTITY_INSERT [dbo].[Registro] OFF
+GO
+SET IDENTITY_INSERT [dbo].[Tipo] ON 
+GO
+INSERT [dbo].[Tipo] ([Id_Tipo], [Tipo_vehiculo], [Precio]) VALUES (1, N'Moto', 1.0000)
+GO
+INSERT [dbo].[Tipo] ([Id_Tipo], [Tipo_vehiculo], [Precio]) VALUES (2, N'Coche', 2.5000)
+GO
+INSERT [dbo].[Tipo] ([Id_Tipo], [Tipo_vehiculo], [Precio]) VALUES (3, N'Furgoneta', 3.0000)
+GO
+INSERT [dbo].[Tipo] ([Id_Tipo], [Tipo_vehiculo], [Precio]) VALUES (4, N'Camion', 6.0000)
+GO
+SET IDENTITY_INSERT [dbo].[Tipo] OFF
+GO
+SET IDENTITY_INSERT [dbo].[vehiculo] ON 
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (21, N'1111FFF', 1)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (22, N'2222AAAA', 1)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (23, N'3332AAAA', 3)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (24, N'4442AAAA', 4)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (25, N'1654ADQ', 1)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (26, N'4642SAF', 3)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (27, N'5464SDG', 3)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (28, N'4546DD', 3)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (29, N'5466SG', 4)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (30, N'5465SFS', 4)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (31, N'5466FDF', 2)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (32, N'4646FSF', 1)
+GO
+INSERT [dbo].[vehiculo] ([Id_vehiculo], [matricula], [ID_Tipo]) VALUES (33, N'5465GD', 3)
+GO
+SET IDENTITY_INSERT [dbo].[vehiculo] OFF
+GO
 ALTER TABLE [dbo].[Registro]  WITH CHECK ADD  CONSTRAINT [FK_Registro_vehiculo1] FOREIGN KEY([idVehiculo])
 REFERENCES [dbo].[vehiculo] ([Id_vehiculo])
 GO
@@ -143,7 +219,7 @@ REFERENCES [dbo].[Tipo] ([Id_Tipo])
 GO
 ALTER TABLE [dbo].[vehiculo] CHECK CONSTRAINT [FK_vehiculo_Tipo]
 GO
-/****** Object:  StoredProcedure [dbo].[DatosxDia]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[DatosxDia]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -161,7 +237,7 @@ SELECT sum(coste) GananciasTotales,
 
 		From Registro where CONVERT(DATE,Registro.salida) =                     @diaSeleccionado
 GO
-/****** Object:  StoredProcedure [dbo].[DiasRegistrados]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[DiasRegistrados]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -171,7 +247,7 @@ create proc [dbo].[DiasRegistrados]
 		select CONVERT(DATE,r.salida) diaSalidas
 		from Registro r
 GO
-/****** Object:  StoredProcedure [dbo].[EditarMatricula]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[EditarMatricula]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -184,7 +260,7 @@ as
 update vehiculo set matricula =@matricula , ID_Tipo =@ID_Tipo WHERE Id_vehiculo =@Id_vehiculo
 
 GO
-/****** Object:  StoredProcedure [dbo].[EditarRegistro]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[EditarRegistro]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -196,7 +272,7 @@ create proc [dbo].[EditarRegistro]
 as
 update Registro set salida=@fechaSalida,entrada=@fechaEntrada WHERE idRegistro=@id_registro
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarMatricula]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[InsertarMatricula]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -207,7 +283,7 @@ create proc [dbo].[InsertarMatricula]
 as
 insert into vehiculo values (@matricula,@idTipo)
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarRegistroEntrada]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[InsertarRegistroEntrada]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -221,7 +297,7 @@ create proc [dbo].[InsertarRegistroEntrada]
 as
 insert into Registro values (@id_vehiculo,@fechaEntrada,null,null,null)
 GO
-/****** Object:  StoredProcedure [dbo].[InsertarRegistroSalida]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[InsertarRegistroSalida]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -234,7 +310,7 @@ create proc [dbo].[InsertarRegistroSalida]
 as
 update Registro set salida=@fechaSalida,duracion=@Duracion,coste=@Coste WHERE idRegistro=@id_registro
 GO
-/****** Object:  StoredProcedure [dbo].[InsetarMatricula]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[InsetarMatricula]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -246,7 +322,7 @@ create proc [dbo].[InsetarMatricula]
 as
 insert into vehiculo values (@matricula,@ID_Tipo)
 GO
-/****** Object:  StoredProcedure [dbo].[MostrarUsuario]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[MostrarUsuario]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -258,7 +334,7 @@ from Registro
 inner join vehiculo on Registro.idVehiculo=vehiculo.Id_vehiculo
 inner join Tipo on vehiculo.ID_Tipo=Tipo.Id_Tipo
 GO
-/****** Object:  StoredProcedure [dbo].[RegistroCompleto]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[RegistroCompleto]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -270,7 +346,7 @@ from Registro
 inner join vehiculo on vehiculo.Id_vehiculo=Registro.idVehiculo
 inner join Tipo on Tipo.ID_Tipo=vehiculo.Id_Tipo
 GO
-/****** Object:  StoredProcedure [dbo].[RegistroFecha]    Script Date: 15/11/2021 7:55:59 ******/
+/****** Object:  StoredProcedure [dbo].[RegistroFecha]    Script Date: 15/11/2021 8:03:36 ******/
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
@@ -292,3 +368,4 @@ USE [master]
 GO
 ALTER DATABASE [GestionAparcamientos] SET  READ_WRITE 
 GO
+
